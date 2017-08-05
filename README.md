@@ -45,7 +45,8 @@ switch(number){
 ```
 func infiniteLoop() -> Never {
     while true {
-} }
+    } 
+}
 ```
 
 **用`enumerated()`循环数组的index和value**
@@ -74,6 +75,7 @@ struct Circle {
     lazy var pi = { //必须是var
         return ((4.0 * atan(1.0 / 5.0)) - atan(1.0 / 239.0)) * 4.0
     }()
+}
 ```
 
 **Swift里enum struct class都可以继承protocol**
@@ -103,3 +105,19 @@ protocol CustomStringConvertible { //打印对象的时候用，跟Java类似
 
 **Swift里的pattern match**
 
+```
+//1 Basic if gurad for switch
+//2 Wildcard
+if case (_, 0, 0) = coordinate {
+    // x can be any value. y and z must be exactly 0.
+    print("On the x-axis") // Printed!
+}
+//3 Value-binding
+if case let (x, y, 0) = coordinate {
+    print("On the x-y plane at (\(x), \(y))") // Printed: 1, 0
+}
+//4 Identifier
+
+
+
+```
