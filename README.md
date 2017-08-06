@@ -240,3 +240,45 @@ if case 1...10 = 5 {
     print("In the range")
 }
 ```
+
+**丢弃函数执行结果或阻止警告**
+
+```
+_ = sum(4,5)
+@discardableResult
+```
+
+**函数重载时使用某一个**
+
+```
+class Dog{
+    func bark() {
+    }
+    func bark(_ loudly:Bool) {
+    }
+    func bark(_ times:Int) {
+    }
+    func test() {
+        let barkFunction = bark(_:) // compile error
+        let barkFunction = bark as (Int) -> Void // "times", not "loudly"
+    }
+}
+```
+
+**类和实例的方法使用**
+
+```
+class Dog{
+    func bark(){
+        print("bark")
+    }
+}
+
+let dog  = Dog()
+dog.bark // () -> ()
+dog.bark()
+let f1 = Dog.bark //(Dog) -> ()->()
+let f2 = f1(dog) //() -> ()
+f2()
+```
+
