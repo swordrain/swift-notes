@@ -282,3 +282,16 @@ let f2 = f1(dog) //() -> ()
 f2()
 ```
 
+**Swift支持标签语句**
+
+```
+var sum = 0
+rowLoop: for row in 0..<8 {
+  columnLoop: for column in 0..<8 {
+    if row == column {
+      continue rowLoop
+    }
+    sum += row * column
+  }
+}
+```
