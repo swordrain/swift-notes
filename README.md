@@ -295,3 +295,10 @@ rowLoop: for row in 0..<8 {
   }
 }
 ```
+
+**tuple命名**
+
+```
+let pair : (first:Int, second:String) = (1, "Two")
+let pair = (first:1, second:"Two")
+```
