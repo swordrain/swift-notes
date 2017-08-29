@@ -25,6 +25,21 @@ for _ in 1..<10 {
 }
 ```
 
+**stride函数生成range**
+
+```
+let hours = 12
+let hourInterval = 3
+for tickMark in stride(from: 3, to: hours, by: hourInterval) {
+    print(tickMark) //3 6 9
+}
+let hours = 12
+let hourInterval = 3
+for tickMark in stride(from: 3, through: hours, by: hourInterval) {
+    print(tickMark) //3 6 9 12
+}
+```
+
 **for in / switch中的模式过滤**
 
 ```
